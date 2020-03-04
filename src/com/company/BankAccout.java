@@ -4,8 +4,8 @@ public class BankAccout {
     private double amount;
 
     public BankAccout(){
-
     }
+
 
 
     public double getAmount() {
