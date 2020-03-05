@@ -17,8 +17,6 @@ public class Main {
                 System.out.println("na schete ostalos sredstv "+l.getRemainingAmount());
                 System.out.println(l.getMessage());
                 break;
-            } finally {
-                System.out.println("vozmite kartu");
             }
 
         }
