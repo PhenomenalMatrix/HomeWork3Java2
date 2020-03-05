@@ -1,7 +1,7 @@
 package com.company;
 
 public class LimitExeption extends Exception {
-    private double remainingAmount;
+    public static double remainingAmount;
 
 
     public LimitExeption(String message, double remainingAmount) {
@@ -10,10 +10,9 @@ public class LimitExeption extends Exception {
     }
 
 
-
-    public double getRemainingAmount() {
+    public static double getRemainingAmount() {
+        System.out.println("snyato "+ remainingAmount);
+        remainingAmount = BankAccout.getAmount() - remainingAmount;
         return remainingAmount;
     }
-
-
 }

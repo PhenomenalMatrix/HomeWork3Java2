@@ -14,8 +14,11 @@ public class Main {
             try {
                 bankAccout.withDraw(6000);
             } catch (LimitExeption l){
+                System.out.println("na schete ostalos sredstv "+l.getRemainingAmount());
                 System.out.println(l.getMessage());
                 break;
+            } finally {
+                System.out.println("vozmite kartu");
             }
 
         }

@@ -1,14 +1,13 @@
 package com.company;
 
 public class BankAccout {
-    private double amount;
+    private static double amount;
 
     public BankAccout(){
     }
 
 
-
-    public double getAmount() {
+    public static double getAmount() {
         return amount;
     }
 
@@ -21,7 +20,18 @@ public class BankAccout {
     }
 
     public void withDraw(int sum) throws LimitExeption{
-       if (getAmount() > 0){
+
+        if (getAmount() < sum){
+            throw new LimitExeption("Nedostatochno sredstv, na schete", getAmount());
+        } else {
+            System.out.println("snyato "+ sum);
+            System.out.println("na schete ostalos sredstv "+ (amount =  getAmount() - sum));
+        }
+
+
+
+
+     /*  if (getAmount() > 0){
            System.out.println("snyato " + sum);
            System.out.println("ostatok " + (amount = amount - sum));
         if (getAmount() < sum){
@@ -35,6 +45,6 @@ public class BankAccout {
 
            throw new LimitExeption("Nedostatochno sredstv, na schete", getAmount());
 
-       }
+       }*/
     }
 }
